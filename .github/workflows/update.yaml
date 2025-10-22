@@ -20,6 +20,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.WORKFLOWS_TOKEN }}
 
       - name: Download snapshot.json.
         run: |
