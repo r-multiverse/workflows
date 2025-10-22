@@ -1,8 +1,8 @@
 name: check-staging
 
 permissions:
+  actions: write
   contents: write
-  workflows: write
 
 on:
   workflow_dispatch:
