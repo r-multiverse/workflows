@@ -1,4 +1,4 @@
-name: check-staging
+name: update
 
 permissions:
   actions: write
