@@ -1,2 +1,5 @@
-# workflows
-Reusable GitHub Actions workflows for R-multiverse
+# R-multiverse workflows
+
+This repository contains reusable GitHub Actions workflows to support R-multiverse.
+
+For all matters, please refer to <https://r-multiverse.org>.
