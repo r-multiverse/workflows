@@ -1,4 +1,6 @@
 name: check-staging
+permissions:
+  contents: read
 
 jobs:
   check-staging:
