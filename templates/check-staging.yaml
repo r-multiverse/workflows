@@ -3,6 +3,9 @@ name: check-staging
 permissions:
   contents: read
 
+on:
+  workflow_call:
+
 jobs:
   check-staging:
     runs-on: ${{ matrix.config.os }}
