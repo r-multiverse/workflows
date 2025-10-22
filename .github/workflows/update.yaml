@@ -12,9 +12,6 @@ jobs:
   update:
     runs-on: ubuntu-latest
 
-    env:
-      GITHUB_PAT: ${{ secrets.WORKFLOWS_TOKEN }}
-
     strategy:
       fail-fast: false
       matrix:
@@ -42,6 +39,8 @@ jobs:
           sed "s|R_VERSION|${{ env.R_VERSION }}|g" > .github/workflows/${{ matrix.config.file }}
 
       - name: Commit and push changes.
+        env:
+          GITHUB_TOKEN: ${{ secrets.WORKFLOWS_TOKEN }}
         run: |
           git config --global user.name github-actions
           git config --global user.email actions@github.com
