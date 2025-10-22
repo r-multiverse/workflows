@@ -40,14 +40,12 @@ jobs:
       - name: Read values in snapshot.json.
         run: |
           echo "CRAN_URL=$(jq -r '.[0].cran' snapshot.json)" >> $GITHUB_ENV
-          echo "R_MULTIVERSE_URL=$(jq -r '.[0].r_multiverse' snapshot.json)" >> $GITHUB_ENV
           echo "R_VERSION=$(jq -r '.[0].r' snapshot.json)" >> $GITHUB_ENV
 
       - name: Replace wildcards with values in workflow scripts.
         run: |
-          sed "s|{{CRAN_URL}}|${{ env.CRAN_URL }}|g" templates/${{ matrix.config.file }} | \
-          sed "s|{{R_MULTIVERSE_URL}}|${{ env.R_MULTIVERSE_URL }}|g" \
-          sed "s|{{R_VERSION}}|${{ env.R_VERSION }}|g" > .github/workflows/${{ matrix.config.file }}
+          sed "s|CRAN_URL|${{ env.CRAN_URL }}|g" templates/${{ matrix.config.file }} | \
+          sed "s|R_VERSION|${{ env.R_VERSION }}|g" > .github/workflows/${{ matrix.config.file }}
 
       - name: Commit and push changes.
         run: |
