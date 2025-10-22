@@ -24,3 +24,4 @@ jobs:
             ${{ github.repository_owner }}/staging
             ${{ github.repository_owner }}/status
             ${{ github.repository_owner }}/topics
+            ${{ github.repository_owner }}/workflows
