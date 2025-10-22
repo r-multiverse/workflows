@@ -1,8 +1,7 @@
 name: update
 
 permissions:
-  actions: write
-  contents: write
+  contents: read
 
 on:
   workflow_dispatch:
