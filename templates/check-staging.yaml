@@ -1,4 +1,5 @@
 name: check-staging
+
 permissions:
   contents: read
 
